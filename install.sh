@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "Automatizando instalaciones..."
+echo "recuerde ejecutar en modo root"
 
 sudo apt update
 echo "updateado"
@@ -50,9 +51,7 @@ echo "curl"
 sudo apt install curl
 
 echo "spotify"
-curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get install spotify-client
+snap install spotify
 
 echo "speedtest"
 sudo apt install speedtest-cli
@@ -63,7 +62,11 @@ sudo apt install wine
 echo "rubymine"
 snap install rubymine --classic
 
+echo "clion"
+snap install clion --classic
+
 echo "vscode" 
+
 
 sudo apt install software-properties-common apt-transport-https wget
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
